@@ -11,3 +11,71 @@
  * 
  * display the registration data using console.log.
  */
+
+let registration:{
+    studentId: string;
+    fullName: string;
+    gradeLevel: string;
+    courseId: string;
+    courseTitle: string;
+    instructorName: string;
+    totalLearningHours: number;
+    registrationDate: string;
+    isPaymentCompleted: boolean;
+}={
+    studentId: "STU2026045",
+    fullName: "John Doe",
+    gradeLevel: "10th Grade",
+    courseId: "CRS2026045",
+    courseTitle: "Introduction to TypeScript",
+    instructorName: "Jane Smith",
+    totalLearningHours: 40,
+    registrationDate: "2026-06-01",
+    isPaymentCompleted: true
+};
+//Data registration2
+let registration2:{
+    studentId: string;
+    fullName: string;
+    gradeLevel: string;
+    courseId: string;
+    courseTitle: string;
+    instructorName: string;
+    totalLearningHours: number;
+    registrationDate: string;
+    isPaymentCompleted: boolean;
+}={
+    studentId: "STU2026046",
+    fullName: "Alice Johnson",
+    gradeLevel: "11th Grade",
+    courseId: "CRS2026046",
+    courseTitle: "Advanced JavaScript",
+    instructorName: "Robert Brown",
+    totalLearningHours: 60,
+    registrationDate: "2026-06-02",
+    isPaymentCompleted: false
+};
+//Data registration3
+let registration3:{
+    studentId: string;
+    fullName: string;
+    gradeLevel: string;
+    courseId: string;
+    courseTitle: string;
+    instructorName: string; 
+    totalLearningHours: number;
+    registrationDate: string;
+    isPaymentCompleted: boolean;
+}={
+    studentId: "STU2026047",
+    fullName: "Michael Smith",
+    gradeLevel: "12th Grade",
+    courseId: "CRS2026047",
+    courseTitle: "Web Development Fundamentals",
+    instructorName: "Emily Davis",
+    totalLearningHours: 50,
+    registrationDate: "2026-06-03",
+    isPaymentCompleted: true
+};
+console.log("== Registration Information ==");
+console.log({registration, registration2, registration3});

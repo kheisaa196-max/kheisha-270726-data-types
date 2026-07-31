@@ -17,3 +17,29 @@
  * - Bonus
  * - Final salary
  */
+
+type Employee = {
+  name: string;
+  basicSalary: number;
+  overtimeHours?: number;
+  overtimeRate?: number;
+};
+
+let employee: Employee | null = {
+  name: "Dimas",
+  basicSalary: 5000000,
+  overtimeHours: 12,
+  overtimeRate: 50000,
+};
+
+let hours = employee?.overtimeHours ?? 0;
+let rate = employee?.overtimeRate ?? 0;
+
+let upahLembur = hours * rate;
+let bonus = hours > 10 ? 300000 : 0;
+let gajiAkhir = (employee?.basicSalary ?? 0) + upahLembur + bonus;
+
+console.log(`Nama Karyawan: ${employee?.name ?? "Unknown"}`);
+console.log(`Upah Lembur  : Rp${upahLembur}`);
+console.log(`Bonus        : Rp${bonus}`);
+console.log(`Gaji Akhir   : Rp${gajiAkhir}`);

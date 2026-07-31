@@ -1,3 +1,4 @@
+
 /**
  * An online store is processing a customer's shopping cart.
  * The customer purchased:
@@ -22,3 +23,48 @@
  *  - Calculate the final payment.
 
  */
+type cartitem = {
+    product : string;
+    price : number;
+    quantity : number;
+};
+type customer = {
+    name : string;
+    isPremium : boolean
+    cart : cartitem[];
+};
+let currentcustomer : customer | null ={
+name : "kheisha",
+isPremium : true,
+cart: [ 
+    {product : "Mechanical Keyboard" , price : 850000, quantity : 1 },
+    {product : "Wireless Mouse" , price : 275000, quantity : 2 },
+    {product : "Mouse Pad" , price : 120000, quantity : 1 }
+]
+};
+//penghitungan (++
+let subtotal = 0;
+let total = 0;
+//pengambilan data keranjang dengan dengan optimal
+let items= currentcustomer?.cart?? [];
+for(let item of items){
+subtotal += item.price  * item.quantity
+
+for (let i=0; i< item.quantity; i++){
+    total ++;
+}
+}
+let discountrate = subtotal > 1000000 ? 0.1  :0;
+let discountamound = subtotal * discountrate;
+
+let isPremium = currentcustomer?.isPremium??false;
+let shippingfee = isPremium ?0: 25000;
+let finalpayment = subtotal-discountamound +shippingfee;
+
+console.log(`Pelanggan :${currentcustomer?. name??"Guset"}`);
+console.log(`Status Member :${isPremium ?"Premium(gratis ongkis)" :"Reguler"}`);
+console.log(`Total Barang :${total} item`);
+console.log(`Subtotal :${subtotal}`);
+console.log(`Diskon (10%) :${discountamound}`);
+console.log(`Ongkos kirim :${shippingfee}`);
+console.log(`Total Bayar :Rp${finalpayment}`);

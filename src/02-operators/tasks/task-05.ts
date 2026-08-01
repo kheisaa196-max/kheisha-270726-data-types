@@ -1,3 +1,5 @@
+import { truncate } from "node:fs";
+
 /**
  * A university is selecting students for a full scholarship.
  * A student will receive the scholarship only if all of the following requirements are satisfied:
@@ -33,3 +35,39 @@
  * - Calculate the remaining scholarship budget.
  * - Display whether the student is accepted.
  */
+type datastudent={
+    name : string;
+    ipk : number;
+    penghasilanorangtua : number;
+    jumlahkompetisi: number;
+    catatanpelanggaran: boolean;
+    kelengkapandokumen: boolean;
+};
+let candidate: datastudent | null ={
+    name : "Alya Putri",
+    ipk : 3.89,
+    penghasilanorangtua : 4200000,
+    jumlahkompetisi :4,
+    catatanpelanggaran : false,
+    kelengkapandokumen : true
+};
+const TOTAL_BUDGET :number = 500000000;
+let ipk = candidate?.ipk?? 0;
+let penghasilanorangtua = candidate?. penghasilanorangtua?? 99999999;
+let jumlahkompetisi = candidate?.jumlahkompetisi?? 0;
+let catatanpelanggaran = candidate?.catatanpelanggaran?? true;
+let kelengkapandokumen = candidate?.kelengkapandokumen?? false;
+
+let isAccepted: boolean=
+ipk >= 3.75 &&
+penghasilanorangtua < 5000000 &&
+jumlahkompetisi >=3 &&
+catatanpelanggaran == false &&
+kelengkapandokumen == true ;
+let scholarshipamount:number=isAccepted? 12000000:0;
+let remainingbudget:number = TOTAL_BUDGET-scholarshipamount;
+console.log(" SELEKSI BEASISWA");
+console.log(`Nama Mahasiswa :${candidate?.name??"unknown"}`);
+console.log(`Status Seleksi :${isAccepted? "diterima" : "ditolak"}`);
+console.log(`Dana Beasiswa :${scholarshipamount}`);
+console.log(`Sisa Dana Anggaran :${remainingbudget}`);

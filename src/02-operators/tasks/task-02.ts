@@ -14,9 +14,18 @@
  * Task: Store and display the result in a variable named "isEligible"
 
  */
-let finalScore= 82;
-let attendance= 94;
-let paid = true;
+type information ={
+    Finalscore : number;
+    Attendance : number;
+    Tutionpaid : boolean
+};
+let studentdata: information={
+Finalscore : 82,
+Attendance : 94,
+Tutionpaid : true,
+};
 
-let isEligible = (finalScore >= 75 && attendance >= 90 && paid)? true : false;
-console.log(isEligible);
+
+let isEligible = studentdata.Finalscore >= 75 && studentdata.Attendance >= 90 && studentdata.Tutionpaid;
+console.log(studentdata);
+console.log(`Apakah ikut wisuda? :${isEligible}`);

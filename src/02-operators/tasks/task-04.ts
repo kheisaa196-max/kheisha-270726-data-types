@@ -45,7 +45,7 @@ cart: [
 //penghitungan (++
 let subtotal = 0;
 let total = 0;
-//pengambilan data keranjang dengan dengan optimal
+//pengambilan data keranjang
 let items= currentcustomer?.cart?? [];
 for(let item of items){
 subtotal += item.price  * item.quantity
@@ -62,9 +62,8 @@ let shippingfee = isPremium ?0: 25000;
 let finalpayment = subtotal-discountamound +shippingfee;
 
 console.log(`Pelanggan :${currentcustomer?. name??"Guset"}`);
-console.log(`Status Member :${isPremium ?"Premium(gratis ongkis)" :"Reguler"}`);
+console.log(`Status Member Premium :${isPremium ? true  : false}`);
 console.log(`Total Barang :${total} item`);
 console.log(`Subtotal :${subtotal}`);
 console.log(`Diskon (10%) :${discountamound}`);
-console.log(`Ongkos kirim :${shippingfee}`);
 console.log(`Total Bayar :Rp${finalpayment}`);

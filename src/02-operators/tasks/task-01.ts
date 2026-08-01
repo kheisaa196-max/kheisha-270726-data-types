@@ -14,11 +14,16 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+
 let friedrice = 3;
 let pricefreidrice = 18000;
 
 let drink = 2
 let pricedrink= 5000;
+
+let isStudent : boolean;
+isStudent = true;
 
 let discount= 10000;
 
@@ -28,7 +33,9 @@ let grantotal=totalfriedrice + totaldrink;
 let finalpayment=grantotal - discount;
 
 console.log("=== calculation===")
+console.log(`Apakah dia siswa :${isStudent ? true : false}`);
 console.log ("Total fried rice : Rp"+totalfriedrice);
 console.log("Total drink : Rp"+totaldrink);
 console.log("Grandtotal :Rp"+grantotal);
+
 console.log("finalpayment :Rp"+finalpayment);

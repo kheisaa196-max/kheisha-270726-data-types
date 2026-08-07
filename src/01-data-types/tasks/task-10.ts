@@ -33,4 +33,4 @@ const productList: Product[] = [
 ];
 
 console.log("== SHOPPING ==");
-console.table(productList);
+console.log(productList);

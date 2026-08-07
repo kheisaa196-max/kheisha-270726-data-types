@@ -66,6 +66,7 @@ for (let item of items){
 let memberDiscount = isPremiumuser ?0.10 :0; //Diskon 10%
 let memberDiscountamound = productSubtotal *memberDiscount;
 
+let harga= productSubtotal-memberDiscountamound;
 let paymentbeforetax = productSubtotal-memberDiscountamound-Voucher;
 
 let taxtamount = paymentbeforetax *0.11;
@@ -81,9 +82,11 @@ console.log(`Status Member Premium :${isPremiumuser ? "Ya":"Tidak"}`);
 console.log(`Status Gratis Ongkir :${isfreeshippingeligible ? "Gratis":"Bayar Normal"}`);
 console.log(`Poin Hadiah :${rewaedpoints}poin`);
 console.log(`Subtotal Product :${productSubtotal}`);
+console.log(`harga :${harga}`);
 console.log(`Diskon Member :${memberDiscountamound}`);
 console.log(`Potongan Voucher :${Voucher}`);
 console.log("---------------------------------------");
 console.log(`Total Sebelum Pajak :${paymentbeforetax}`);
 console.log(`Biaya PPN :${taxtamount}`);
 console.log(`Total Akhir Bayar :${finalpayment}`);
+console.log(`freeshipping :${isfreeshippingeligible}`);

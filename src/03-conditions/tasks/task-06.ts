@@ -23,3 +23,26 @@
  * 2. Implement the hospital workflow using conditional statements.
  * 3. Display the patient's destination.
  */
+let patientname:string ="Siti Rahma";
+let iscriticalcondition:boolean = false;
+let isappointment:boolean = true;
+let age:number = 67;
+let isinsurance:boolean = true;
+ 
+if(iscriticalcondition){
+    console.log("Emergency Room")
+}else{
+    if(isappointment){
+        if(age>= 60){
+            console.log("Priority Queue.")
+        }else{
+            console.log("Regular Queue")
+        }
+    }else{
+        if(isinsurance){
+            console.log("Insurance Registration Counter")
+        }else{
+            console.log("General Registration Counter")
+        }
+    }
+}

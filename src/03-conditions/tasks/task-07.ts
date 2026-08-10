@@ -30,3 +30,24 @@
  * 2. Implement both screening stages.
  * 3. Display the loan decision.
  */
+
+let name:string = "Andi Wijaya";
+let monthly:number = 10000000;
+let creditscore:number = 725;
+let existing:number =2500000;
+let ispermanent: boolean = true;
+
+let pastskrining:boolean = monthly <= 8000000 && creditscore >= 700;
+let rasio: number = existing/monthly;
+let skrining2: boolean = rasio <= 0.30 && ispermanent;
+
+if (pastskrining && skrining2){
+    console.log(`pemohon: ${name}`);
+    console.log("Keputusan : Loan Approved");
+}else if(pastskrining){
+    console.log(`pemohon: ${name}`);
+    console.log("Keputusan: Manual review");
+}else{
+    console.log(`pemohon: ${name}`);
+    console.log("Keputusan: Loan Rejected");
+}

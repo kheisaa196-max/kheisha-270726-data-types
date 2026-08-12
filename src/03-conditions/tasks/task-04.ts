@@ -34,8 +34,8 @@ if(isroomavailable){
 }
 }else{
     if(ispremiummember){
-        console.log(" priority waiting list");
+        console.log("priority waiting list");
     }else{
-        console.log(" no rooms are available");
+        console.log("no rooms are available");
     }
 }

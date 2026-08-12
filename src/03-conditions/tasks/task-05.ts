@@ -40,15 +40,14 @@ let isdisciplinary:boolean = false;
 let isdocumentcomplete:boolean = true;
 
 if(GPA >= 3.75 && familyincome <5000000){
- if (competitioncount >= 3 &&
+ if (
+    competitioncount >= 3 &&
     isdisciplinary == false &&
-    isdocumentcomplete == true) {
-
+    isdocumentcomplete == true)
+{
     console.log("Scholarship Approved");
 } else {
-
     console.log("Passed First Screening, but Failed Second Screening");
-
 }
 }else{
     console.log("Failed First Screening");

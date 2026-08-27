@@ -16,18 +16,7 @@
  * 4. Create function to return number of passing students.
  */
 
-const scores = [
-  82,
-  91,
-  76,
-  88,
-  69,
-  94,
-  73,
-  85,
-  79,
-  97
-];
+const scores = [ 82, 91, 76, 88, 69, 94, 73, 85, 79, 97 ];
 
 function findHighestScore(scores: number[]): number {
 

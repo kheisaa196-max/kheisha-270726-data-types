@@ -94,3 +94,80 @@ function countByDepartement(patients: {id: string, name: string, age: number, de
   }
   return count;
 }
+function findHighestBill(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): number {
+  let highest = patients[0].bill;
+    for(let i = 0; i < patients.length; i++){
+     const item = patients[i];
+    if(item.bill> highest){
+    highest = item.bill;
+    }
+}
+return highest;
+} 
+function findLowestBill(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): number {
+  let lowest = patients[0].bill;
+    for(let i = 0; i < patients.length; i++){
+     const item = patients[i];
+    if(item.bill< lowest){
+    lowest = item.bill;
+    }
+}
+return lowest;
+}
+function calculateAverageBill(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): number {
+  let total = 0;
+  for (let i = 0; i < patients.length; i++) {
+    const item = patients[i];
+    total = total + item.bill;
+  }
+  return total / patients.length;
+}
+
+function calculateTotalRevenue(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): number {
+  let total = 0;
+  for (let i = 0; i < patients.length; i++) {
+    const item = patients[i];
+    total = total + item.bill;
+  }
+  return total;
+}
+
+function getAdmittedNames(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): string[] {
+  let names: string[] = [];
+  for (let i = 0; i < patients.length; i++) {
+    const item = patients[i];
+    if (item.admitted === true) {
+      names.push(item.name);
+    }
+  }
+  return names;
+}
+
+function printHospitalReport(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): void {
+  const total = patients.length;
+  const admitted = countAdmitted(patients);
+  const discharged = countDischarged(patients);
+  const pediatrics = countByDepartement(patients, "Pediatrics");
+  const cardiology = countByDepartement(patients, "Cardiology");
+  const orthopedics = countByDepartement(patients, "Orthopedics");
+  const highest = findHighestBill(patients);
+  const lowest = findLowestBill(patients);
+  const average = calculateAverageBill(patients);
+  const revenue = calculateTotalRevenue(patients);
+  const admittedNames = getAdmittedNames(patients);
+
+  console.log(`Total Patients: ${total}`);
+  console.log(`Admitted Patients: ${admitted}`);
+  console.log(`Discharged Patients: ${discharged}`);
+  console.log(`Pediatrics: ${pediatrics}`);
+  console.log(`Cardiology: ${cardiology}`);
+  console.log(`Orthopedics: ${orthopedics}`);
+  console.log(`Highest Bill: ${highest}`);
+  console.log(`Lowest Bill: ${lowest}`);
+  console.log(`Average Bill: ${average}`);
+  console.log(`Total Revenue: ${revenue}`);
+  console.log(`Admitted Patients Names: ${admittedNames}`);
+}
+
+printHospitalReport(patients);
+

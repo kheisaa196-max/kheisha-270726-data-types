@@ -63,3 +63,34 @@ const patients = [
         bill: 350000
     }
 ];
+ 
+function countAdmitted(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): number {
+  let count = 0;   
+  for(let i = 0; i < patients.length; i++){
+    const item = patients[i];
+        if(item.admitted=== true){
+            count = count +1
+        }
+    }
+    return count;
+}
+function countDischarged(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[]): number {
+  let count = 0;   
+  for(let i = 0; i < patients.length; i++){
+    const item = patients[i];
+        if(item.admitted=== false){
+            count = count +1
+        }
+    }
+    return count;
+}
+function countByDepartement(patients: {id: string, name: string, age: number, department: string, admitted: boolean, bill: number}[], department: string): number {
+  let count = 0;   
+  for(let i = 0; i < patients.length; i++){
+    const item = patients[i];
+    if(item.department === department){
+      count = count + 1;
+    }
+  }
+  return count;
+}

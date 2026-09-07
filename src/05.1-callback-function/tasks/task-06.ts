@@ -26,7 +26,7 @@ type Employee = {
     salary: number
     performance: number
 }
-type PERFORMANCE_STATUS = "Exceeds Expectations" | "Meets Expectations" | "Needs Improvement"
+type PERFORMANCE_STATUS = "Exceeds Expectations" | "Meets Expectations" | "Needs Improvement" | "Unsatisfactory"
 type EMPLOYEE_BONUS = Employee & { bonus: number }
 type EMPLOYEE_PERFORMANCE = Employee & { status: PERFORMANCE_STATUS }
 
@@ -41,18 +41,43 @@ const employees: Employee[] = [
 
 function calculateFinalSalary(selectedEmployee: Employee): EMPLOYEE_BONUS {
     // implementation: this function return employee data with bonus and updated final salary
-    return;
+    if(selectedEmployee.performance >= 90) {
+        const bonus = selectedEmployee.salary * 0.15;
+        return { ...selectedEmployee, bonus: bonus};
+    }else if (selectedEmployee.performance >= 80) {
+        const bonus = selectedEmployee.salary * 0.10;
+        return { ...selectedEmployee, bonus: bonus};
+    } else if( selectedEmployee.performance >=70) {
+        const bonus = selectedEmployee.salary * 0.05;
+        return { ...selectedEmployee, bonus: bonus};
+    }else{
+        return { ...selectedEmployee, bonus: 0};
+    }
 }
 function getPerformanceStatus(selectedEmployee: Employee): EMPLOYEE_PERFORMANCE {
-    return;
+   if(selectedEmployee.performance >= 90){
+    return { ...selectedEmployee, status: "Exceeds Expectations"};
+   }else if(selectedEmployee.performance >= 80 ){
+    return { ...selectedEmployee, status:  "Meets Expectations"};
+   }else if(selectedEmployee.performance >=70){
+    return { ...selectedEmployee, status: "Needs Improvement"};
+   }else{
+    return { ...selectedEmployee, status: "Unsatisfactory"};
+   }
 }
 
 function employeeProcess<T>(
     arr: Employee[],
     callback: (employee: Employee) => T
 ): T[] {
-    return;
+    const hasil: T[]=[];
+    for(const employee of arr){
+        const result = callback(employee);
+        hasil.push(result);        
+    }
+    return hasil;
 }
+
 
 const employeeWithFinalSalary = employeeProcess(employees, calculateFinalSalary)
 const employeeWithPerformanceStatus = employeeProcess(employees, getPerformanceStatus)

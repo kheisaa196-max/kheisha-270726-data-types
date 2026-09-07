@@ -21,3 +21,36 @@ const products = [
  * 
  * Instead of creating a separate loop for every operation, the developer creates a reusable processing function.
  */
+
+interface product{
+    name: string;
+    price: number;
+}
+       
+function processProducts(products: product[], tampilkan: (p: product) => string) {
+    for(const produk of products){
+        const result = tampilkan(produk);
+        if(result !==""){
+            console.log(result);
+        }
+    }
+}
+function formatDisplay(p:product): string {
+    return `${p.name} - Rp${p.price}`;
+}
+function formatExpensive(p: product): string {
+    if (p.price > 1000000) {        
+        return `${p.name} - Rp${p.price}`;
+    }
+    return "";   
+}        
+ function formatDiskon(p: product): string{
+    if(p.price >500000){
+        const hargaDiskon =  p.price * 0.9;
+        return `${p.name} - Rp${hargaDiskon}`; 
+    }
+    return "";
+ }
+ processProducts(products, formatDisplay);
+ processProducts(products, formatExpensive);
+ processProducts(products, formatDiskon);

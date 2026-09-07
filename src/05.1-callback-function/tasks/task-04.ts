@@ -20,3 +20,45 @@ const scores = [92, 68, 84, 73, 95, 61, 88];
  * 
  * Instead of creating four separate loops, create a reusable function that receives a callback responsible for transforming a score.
  */
+
+function processScores<T>(scores: number[], transform: (score: number) => T): T[]{
+    const hasil: T[]=[];
+    for (const score of scores){
+        const result = transform(score);
+        hasil.push(result);
+    }
+        return hasil;
+}
+function checkPassed(score: number): boolean{
+        return score >= 70;
+}
+function getGrade(score: number): string{
+    if(score >= 90){
+        return "A";
+    }else if(score >= 80){
+        return "B";
+    }else if(score >= 70){
+        return "C";
+    }else{
+        return "D";
+    }
+}
+function addBonus(score: number): number{
+        return score + 5;
+}
+function checkExcellent(score: number): string{
+    if(score > 90){
+        return "Excellent";
+    }
+        return "Reguler";
+}
+const hasilPassed = processScores(scores, checkPassed);
+const hasilGrade = processScores(scores,getGrade);
+const hasilBonus = processScores(scores,addBonus);
+const hasilExcellent = processScores(scores, checkExcellent);
+
+
+console.log(hasilPassed.join(", "));
+console.log(hasilGrade.join(", "));
+console.log(hasilBonus.join(", "));
+console.log(hasilExcellent.join(", "));

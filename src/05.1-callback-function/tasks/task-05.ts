@@ -59,21 +59,36 @@ type ShippingCategoryOrder = Order & { shippingStatus: SHIPPING_CATEGORY }
 function getPaymentStatus(selectedOrder: Order): PaymentStatusOrder {
     // implement to determine payment status order
     // this function return order data within status or order
-    return;
-}
+    if(selectedOrder.paid){
+        return { ...selectedOrder, status: "PAID" };
+    }
+    return { ...selectedOrder, status: "UNPAID" };
+}    
+        
 
 
 function getShippingCategory(selectedOrder: Order): ShippingCategoryOrder {
     // implement to determine shipping category of order
     // this function return order data within shipping cateogory
-    return;
+    if( selectedOrder.total >= 1500000){
+        return{ ...selectedOrder, shippingStatus: "FREE SHIPPING"};
+    }else if( selectedOrder.total >= 500000){
+        return{ ...selectedOrder,  shippingStatus:"STANDARD SHIPPING"};
+    }else{
+        return{ ...selectedOrder, shippingStatus:"ECONOMY SHIPPING"};
+    }
 }
 
 function processOrder<T>(
     arr: Order[],
     callback: (order: Order) => T): T[] {
     // implement for callback
-    return;
+    const hasil: T []= [];
+    for (const order of arr) {
+        const result = callback(order);
+        hasil.push(result);        
+    }
+    return hasil;
 }
 
 const orderWithPaymentStatus = processOrder(orders, getPaymentStatus)

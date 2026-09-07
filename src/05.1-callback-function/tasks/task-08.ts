@@ -46,3 +46,12 @@ const transactions = [
  *   - Pending transactions → 1%
  *   - Cancelled transactions → 0%
  */
+
+type TRANSACTION_STATUS= "Paid" | "Panding" | "Cancelled"
+type Transaction = {
+    id: string;
+    customer: string;
+    amount: number;
+    status: __;
+}
+type Transaction_Category= "High Value" | "Medium V"

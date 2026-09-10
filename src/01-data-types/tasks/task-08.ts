@@ -22,6 +22,11 @@
  * 3. Display the temperature data using console.log.
  */
 
+type TemperatureInformtion={
+    time: string;
+    temperature: number
+}
+
 let temperatureData: number[] = [24.5, 25.1, 26.8, 28.4, 30.2, 31.1, 30.7, 29.3];
 let timeData: string[] = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"];
 

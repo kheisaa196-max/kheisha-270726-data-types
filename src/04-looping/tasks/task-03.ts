@@ -23,12 +23,12 @@
  * - Number of passing students
  * - Number of failing students
  */
-  let scores=[82, 75, 91, 64, 88, 73, 95, 80, 69, 77, 84, 92, 58, 79, 86, 71, 90, 67, 83, 76];
+  let scores: number[]=[82, 75, 91, 64, 88, 73, 95, 80, 69, 77, 84, 92, 58, 79, 86, 71, 90, 67, 83, 76];
   let total= 0;
   let passed= 0;
   let failed= 0;
   for (let i= 0; i<scores.length; i++){
-        total=total+ scores[i];
+    total=total+ scores[i];
     if (scores[i] >= 75){
         passed=passed +1;
     }else{

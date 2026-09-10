@@ -72,3 +72,67 @@ const submissions = [
     },
 ];
 
+let scoreStudent = submissions.map(submission =>{
+let correctScore = submission.answers.filter(answer =>{
+let question = questions.find(q=> q.id === answer.questionId);
+    return answer.answer === question?.correctAnswer;
+}).length;
+let processStudentscore = correctScore * 25;
+    return{
+        student: submission.student,
+        score: processStudentscore
+    };
+})
+console.log(scoreStudent);
+
+let studentAnswer = submissions.map(submission =>{
+let correctAnswer = submission.answers.filter(answer =>{
+    let question = questions?.find(q=> q.id === answer.questionId);
+    return answer.answer === question?.correctAnswer;
+}).length;
+let wrong = submission.answers.length - correctAnswer;
+    return{
+        student: submission.student,
+        correct: correctAnswer,
+        wrong: wrong
+    }
+});
+console.log(studentAnswer);
+
+let categories = [ ...new Set(questions.map(q=> q.category))];
+let categoryScore = categories.map(category=>{
+let questionId =questions
+    .filter(q=>q.category === category)
+    .map(q=>q.id)
+let allAnswer = submissions.flatMap(s=> s.answers);
+let relevant = allAnswer.filter(answer=> questionId.includes(answer.questionId));
+let correctCount = relevant.filter(answer=> {
+    let question = questions.find(q=> q.id === answer.questionId);
+    return answer.answer === question?.correctAnswer;
+}).length
+let averageScore = (correctCount / relevant.length) * 100;
+    return{
+        category: category,
+        averageScore: averageScore
+    };
+})
+console.log(categoryScore);
+let totalStudents = scoreStudent.length;
+let totalScore = scoreStudent.reduce((sum,s)=> sum + s.score,0);
+/**pembulatan desimal */
+let averageScore = Number((totalScore / scoreStudent.length).toFixed(2));
+let highestScore = Math.max( ...scoreStudent.map(s=> s.score));
+let lowestScore = Math.min( ...scoreStudent.map(s=> s.score));
+let passedStudents = scoreStudent.filter(s=> s.score >=70).length;
+let failedStudents = scoreStudent.filter(s=> s.score < 70).length;
+let passRate = Number(((passedStudents / totalStudents) * 100).toFixed(2));
+let exam = {
+    totalStudents: totalStudents,
+    averageScore: averageScore,
+    highestScore: highestScore,
+    lowestScore: lowestScore,
+    passedStudents: passedStudents,
+    failedStudents: failedStudents,
+    passRate: passRate
+};
+console.log(exam);

@@ -10,7 +10,7 @@
  * display the attendance data using console.log.
  */
 
-let attendance:{
+const attendance:{
     employeeID: string;
     employeeName: string;       
     date: string;
@@ -27,8 +27,8 @@ let attendance:{
     totalWorkingHours: 9,
     isPresent: true
 };
-//Data Attendance2;
-let attendance2:{
+//Data Attendance2
+const attendance2:{
     employeeID: string;
     employeeName: string;       
     date: string;
@@ -45,8 +45,8 @@ let attendance2:{
     totalWorkingHours: 9,
     isPresent: true
 };
-//Data Attendance3;
-let attendance3:{
+//Data Attendance3
+const attendance3:{
     employeeID: string;
     employeeName: string;       
     date: string;

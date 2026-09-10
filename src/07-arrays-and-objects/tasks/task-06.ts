@@ -24,3 +24,31 @@ const borrowings = [
     { student: "Eka", bookId: 1, days: 4 },
     { student: "Andi", bookId: 3, days: 8 },
 ];
+
+let borrowingAndi = borrowings.filter(b=> b.student === "Andi" );
+console.log(borrowingAndi);
+
+let information =  borrowings.map(b => {
+    let book = books.find(i => i.id === b.bookId);
+    return{
+        student: b.student,
+        title: book?.title,
+        category: book?.category,
+        days: b.days
+    };
+})
+console.log(information);
+
+let programmingBorrwers = information.filter(i =>i.category === "Programming");
+console.log("Programming Book")
+console.log(programmingBorrwers);
+
+let totalTransaction = borrowings.length;
+console.log(totalTransaction);
+
+let totalDays = borrowings.reduce((sum,s) => sum+ s.days,0);
+let average =  totalDays/borrowings.length;
+console.log(average.toFixed(2));
+
+let borrowedBook = information.filter(i =>i.days > 7)
+console.log(borrowedBook);

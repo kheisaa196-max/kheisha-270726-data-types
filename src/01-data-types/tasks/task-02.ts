@@ -19,7 +19,7 @@ const productCode: string = "KBR-001";
 const originalPrice: number = 850000;
 const discountPercentage: number = 25;
 const quantity: number = 2;
-const isPremiumMember: boolean = true;
+const isFreeshipping: boolean = true;
 const warehouseStock: number = 18;
 
 console.log("==Product Data==");
@@ -27,6 +27,6 @@ console.log(`Produk      : ${productName} (${productCode})`);
 console.log(`Harga Asli  : Rp ${originalPrice}`);
 console.log(`Diskon      : ${discountPercentage}%`);
 console.log(`Jumlah Beli : ${quantity}`);
-console.log(`Member Premium: ${isPremiumMember ? "Ya" : "Tidak"}`);
+console.log(`Member Premium: ${isFreeshipping ? "Ya" : "Tidak"}`);
 console.log('Total Harga  : Rp ' + (originalPrice * quantity * (1 - discountPercentage / 100)));
 console.log(`Stok Gudang : ${warehouseStock} unit`);

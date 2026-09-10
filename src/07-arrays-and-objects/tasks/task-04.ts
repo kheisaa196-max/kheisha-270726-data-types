@@ -28,3 +28,19 @@ const cart = [
         quantity: 1,
     },
 ];
+let subtotal = cart.reduce((sum, p) => sum + p.quantity* p.price, 0);
+console.log(`Total: ${subtotal}`);
+
+let discountPercentage = 0
+if( subtotal >= 3000000){
+    discountPercentage=0.10;
+}else if( subtotal >= 2000000){
+    discountPercentage=0.05;
+}
+console.log(`Diskon: ${discountPercentage *100}%`);
+
+let finaltotal = subtotal -(subtotal *discountPercentage)
+console.log(finaltotal);
+
+let expensive = cart.find(p => p.price >= 1000000)
+console.log(expensive);

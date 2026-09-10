@@ -12,7 +12,7 @@
  * display the registration data using console.log.
  */
 
-let registration:{
+const registration:{
     studentId: string;
     fullName: string;
     gradeLevel: string;
@@ -34,7 +34,7 @@ let registration:{
     isPaymentCompleted: true
 };
 //Data registration2
-let registration2:{
+const registration2:{
     studentId: string;
     fullName: string;
     gradeLevel: string;
@@ -56,7 +56,7 @@ let registration2:{
     isPaymentCompleted: false
 };
 //Data registration3
-let registration3:{
+const registration3:{
     studentId: string;
     fullName: string;
     gradeLevel: string;

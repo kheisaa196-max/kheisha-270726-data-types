@@ -45,3 +45,16 @@ const products = [
         stock: 3,
     },
 ];
+/** task 1 dan 2 sama  */
+let currently = products.filter(s => s.stock > 0);
+console.log(`Produk Tersedia: `,currently);
+
+
+let productName = currently.map(p => p.name);
+console.log(`Product Name: ${productName}`);
+
+let total = currently.reduce((sum, s) => sum + s.price*s.stock, 0);
+console.log(`Total Value: ${total}`);
+
+let sortedByPrice = currently.sort((a, b) => b.price - a.price);
+console.log(`Product termahal - termurah:`,sortedByPrice);

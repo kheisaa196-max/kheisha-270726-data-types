@@ -35,3 +35,29 @@ const orders = [
         ],
     },
 ];
+
+let completeOrder = orders.filter(i=>i.status === "completed");
+console.log(completeOrder);
+
+let totalValue = orders.map(order =>{
+let total = order.items.reduce((sum, items) => sum + items.price*items.quantity, 0);
+return{
+    id: order.id,
+    customer: order.customer,
+    status: order.status,
+    total: total 
+}
+});
+console.log(totalValue);
+
+let maxTotal = Math.max( ...totalValue.map(o => o.total));
+let topCustomer = totalValue.find( o=> o.total === maxTotal);
+console.log(topCustomer);
+
+let totalRevenue = totalValue
+.filter( o => o.status === "completed")
+.reduce((sum,o) =>sum +o.total,0);
+console.log(totalRevenue);
+
+let allProduct = orders.flatMap(o=>o.items). map(o=> o.product);
+console.log(allProduct);

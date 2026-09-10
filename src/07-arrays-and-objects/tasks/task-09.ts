@@ -33,3 +33,17 @@ const posts = [
     likes: 300,
   },
 ];
+
+let post = posts.filter(i=> i.content.includes("typescript"));
+console.log("content typescript");
+console.log(`containing typescript: `,post);
+
+let postNest = posts.filter(n=> n.content.includes("nestjs"));
+console.log(`containing nestjs: `,postNest);  
+
+let topPost = posts.reduce((highhest, current) => 
+  current.likes > highhest.likes? current: highhest );
+console.log(`Top Likes: `,topPost);
+
+let total = posts.reduce ((sum,l)=> sum + l.likes,0);
+console.log(`Tota lLikes: `,total);

@@ -22,3 +22,17 @@ const students = [
   { name: "Deni", score: 74 },
   { name: "Eka", score: 55 },
 ];
+/**let nama = [ "Andi", "Budi", "Citra", "Deni", "Eka"];**/
+let nama = [ "Eka", "Budi", "Deni", "Citra", "Andi"];
+nama.sort();
+console.log(nama.sort());
+let Passingscore = students.filter(s => s.score >= 70);
+Passingscore.forEach(s => {
+  console.log(`nama: ${s.name}, nilai: ${s.score}`);
+});
+let top = students.find(s => s.score >= 90);
+console.log(top);
+let total = students.reduce((sum, s) => sum + s.score, 0);
+let average = total / students.length;
+console.log(`Total: ${total}`);
+console.log(`Average: ${average}`);

@@ -17,14 +17,14 @@ let  book:{
   author: string;
   numberOfPages: number;
   category: string;
-  isAvaliable: boolean;
+  isAvailable: boolean;
 }={
     ISBN: "978-3-16-148410-0",
     title: "The Great Gatsby",      
     author: "F. Scott Fitzgerald",
     numberOfPages: 180,
     category: "Fiction",
-    isAvaliable: true
+    isAvailable: true
 };
 //book2
 let book2:{

@@ -10,13 +10,13 @@
  * display the student data using console.log.
  */
 
-type student = {
+type Student = {
     studentID: string;
     fullName: string;
     age: number;
     isActive: boolean;
 };
-const studentList: student[] =[
+const studentList: Student[] =[
     {studentID: "MKL-26-041",fullName: "Kheisha khusna", age: 16, isActive: true},
     {studentID: "MKL-26-042", fullName: "Riyan Hidayat", age: 17, isActive: false},
     {studentID: "MKL-26-043", fullName: "Jesno Limit", age: 15, isActive: true}   

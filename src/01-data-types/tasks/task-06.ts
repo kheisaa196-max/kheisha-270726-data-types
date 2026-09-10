@@ -10,7 +10,7 @@
  * display the product data using console.log.
  */
 
-let product1:{
+const product1:{
     productCode: string;
     productName: string;                    
     sellingPrice: number;
@@ -28,7 +28,7 @@ let product1:{
     isDiscounted: true
 };
 //Data product2
-let product2:{
+const product2:{
     productCode: string;
     productName: string;        
     sellingPrice: number;
@@ -46,7 +46,7 @@ let product2:{
     isDiscounted: false
 };
 //Data product3
-let product3:{
+const product3:{
     productCode: string;
     productName: string;
     sellingPrice: number;

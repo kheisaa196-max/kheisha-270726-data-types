@@ -1,5 +1,3 @@
-import { Socket } from "node:dgram";
-
 /**
  * An LMS stores assignment submission data at following array.
  * Business Rules

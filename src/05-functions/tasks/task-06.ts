@@ -12,8 +12,6 @@
      * Create the following functions:
      */
 
-    import { stripVTControlCharacters } from "node:util";
-
     const sales = [
       125000,
       780000,
@@ -75,11 +73,13 @@
     return count;
     }
     function allTransaction(sales: number[]):void{
+        const total = calculateTotalSales(sales);
         const highest = findHighestTransaction(sales);
         const lowest = findLowestTransaction(sales);
         const average = calculateAverageSale(sales);
         const Large  = countLargeTransactions(sales, 500000);
 
+        console.log(`Total Sales: ${total}`);
         console.log(`Highest Transaction: ${highest}`);
         console.log(`Lowest Transaction: ${lowest}`);
         console.log(`Average Sale: ${average}`);

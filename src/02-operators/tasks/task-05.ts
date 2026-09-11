@@ -1,5 +1,3 @@
-import { truncate } from "node:fs";
-
 /**
  * A university is selecting students for a full scholarship.
  * A student will receive the scholarship only if all of the following requirements are satisfied:

@@ -46,8 +46,6 @@ Student Tasks
 - Display the final registration result.
  */
 
-import { PassThrough } from "node:stream";
-
 let studentname: string= "Nadia Putri";
 let isActive: boolean= true;
 let isTutionpaid: boolean= true;
@@ -58,7 +56,7 @@ let isseatsavailable: boolean= false;
 let registrationResult:string ="";
 
 if(isActive && isTutionpaid){
-if(PassThrough && ispasseddatabasesystem && GPA >= 3.20){
+if(ispassedprogammingfundamentals && ispasseddatabasesystem && GPA >= 3.20){
     if( isseatsavailable){
          registrationResult=" Registration Successful"
     }else{
@@ -71,4 +69,4 @@ if(PassThrough && ispasseddatabasesystem && GPA >= 3.20){
     registrationResult="Registration Rejected"
 }
 
-console.log("Hasil pendaftaran " + studentname+":"+registrationResult);
+console.log("Hasil pendaftaran " + studentname + " : " + registrationResult);
